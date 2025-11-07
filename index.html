@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Portal</h1>
+
+        <div id="submission-section">
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" placeholder="Enter Employee ID">
+            <p>Today's Date: <span id="currentDate"></span></p>
+            <button id="submitDateBtn">Submit Today's Date</button>
+            <p><a href="#" id="previousSubmissionsLink" style="display: none;">Previous Submissions: <span id="totalSubmissionsCount">0</span> days</a></p>
+            <ul id="submissionDatesList" style="display: none;"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
