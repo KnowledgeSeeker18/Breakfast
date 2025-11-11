@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSubmissionsCount = document.getElementById('totalSubmissionsCount');
     const submissionDatesList = document.getElementById('submissionDatesList');
 
-    const API_BASE_URL = 'http://localhost:3000/api';
+    const API_BASE_URL = '/api'; // Changed to relative path for Vercel deployment
     let currentEmployeeId = null;
 
     function getISTDate() {

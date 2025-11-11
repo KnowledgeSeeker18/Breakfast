@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
 
 // Middleware
 app.use(cors());
@@ -96,8 +95,9 @@ app.get('/api/submissions/:employeeId', async (req, res) => {
     }
 });
 
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// New /api/hello endpoint
+app.get('/api/hello', (req, res) => {
+    res.status(200).json({ message: 'Hello from Vercel Serverless Function!' });
 });
+
+module.exports = app;
