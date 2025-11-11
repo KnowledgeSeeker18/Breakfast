@@ -31,7 +31,7 @@ const employeeSchema = new mongoose.Schema({
 const Employee = mongoose.model('Employee', employeeSchema);
 
 // Routes
-app.get('/employee/:employeeId', async (req, res) => {
+app.get('/api/employee/:employeeId', async (req, res) => {
   try {
     const employee = await Employee.findOne({ employeeId: req.params.employeeId });
     if (employee) res.status(200).json(employee);
@@ -41,7 +41,7 @@ app.get('/employee/:employeeId', async (req, res) => {
   }
 });
 
-app.post('/employee', async (req, res) => {
+app.post('/api/employee', async (req, res) => {
   try {
     const { employeeId, mailId, name, team, mobileNumber } = req.body;
     const newEmployee = new Employee({ employeeId, mailId, name, team, mobileNumber, submissions: [] });
@@ -52,7 +52,7 @@ app.post('/employee', async (req, res) => {
   }
 });
 
-app.post('/submission', async (req, res) => {
+app.post('/api/submission', async (req, res) => {
   try {
     const { employeeId, date } = req.body;
     const employee = await Employee.findOne({ employeeId });
@@ -69,7 +69,7 @@ app.post('/submission', async (req, res) => {
   }
 });
 
-app.get('/submissions/:employeeId', async (req, res) => {
+app.get('/api/submissions/:employeeId', async (req, res) => {
   try {
     const employee = await Employee.findOne({ employeeId: req.params.employeeId });
     if (employee) res.status(200).json(employee.submissions);
