@@ -4,9 +4,9 @@
   "description": "Backend for the Employee Portal application",
   "main": "api/server.js",
   "scripts": {
-    "start": "node api/server.js"
+    "start": "node api/server.js",
+    "vercel-build": "echo 'Vercel build complete'"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
