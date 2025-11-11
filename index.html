@@ -10,10 +10,35 @@
     <div class="container">
         <h1>Employee Portal</h1>
 
-        <div id="submission-section">
+        <div id="employee-id-section">
             <label for="employeeId">Employee ID:</label>
             <input type="text" id="employeeId" placeholder="Enter Employee ID">
-            <p>Today's Date: <span id="currentDate"></span></p>
+        </div>
+
+        <div id="employee-details-section" style="display: none;">
+            <p>Welcome, <span id="displayEmployeeName"></span>!</p>
+            <label for="mailId">Mail ID:</label>
+            <input type="email" id="mailId" placeholder="Enter Mail ID" required>
+            <label for="employeeName">Name:</label>
+            <input type="text" id="employeeName" placeholder="Enter Name" required>
+            <label for="teamSelect">Team:</label>
+            <select id="teamSelect" required>
+                <option value="">Select Team</option>
+                <option value="Interns">Interns</option>
+                <option value="Tech">Tech</option>
+                <option value="Operations">Operations</option>
+                <option value="Others">Others</option>
+            </select>
+            <input type="text" id="otherTeamInput" placeholder="Enter Other Team" style="display: none;">
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="tel" id="mobileNumber" placeholder="Enter Mobile Number" required>
+
+            <button id="saveDetailsBtn">Save Details</button>
+        </div>
+
+        <div id="submission-section">
+            <p>Today's Date (IST): <span id="currentDate"></span></p>
             <button id="submitDateBtn">Submit Today's Date</button>
             <p><a href="#" id="previousSubmissionsLink" style="display: none;">Previous Submissions: <span id="totalSubmissionsCount">0</span> days</a></p>
             <ul id="submissionDatesList" style="display: none;"></ul>
