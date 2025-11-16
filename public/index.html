@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="admin-login-section">
+        <button id="adminLoginBtn">Admin Login</button>
+    </div>
+
+    <div id="admin-auth-panel" style="display: none;">
+        <h2>Admin Login</h2>
+        <input type="password" id="adminSecretKey" placeholder="Enter Secret Key">
+        <button id="submitAdminKeyBtn">Submit Key</button>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <h2>Admin Panel</h2>
+        <input type="file" id="csvFile" accept=".csv">
+        <button id="uploadCsvBtn">Upload CSV</button>
+        <p id="uploadMessage"></p>
+    </div>
+
     <div class="container">
         <h1>Employee Portal</h1>
 
@@ -19,23 +36,14 @@
         <div id="employee-details-section" style="display: none;">
             <p>Welcome, <span id="displayEmployeeName"></span>!</p>
             <label for="mailId">Mail ID:</label>
-            <input type="email" id="mailId" placeholder="Enter Mail ID" required>
+            <input type="email" id="mailId" readonly>
             <label for="employeeName">Name:</label>
-            <input type="text" id="employeeName" placeholder="Enter Name" required>
+            <input type="text" id="employeeName" readonly>
             <label for="teamSelect">Team:</label>
-            <select id="teamSelect" required>
-                <option value="">Select Team</option>
-                <option value="Interns">Interns</option>
-                <option value="Tech">Tech</option>
-                <option value="Operations">Operations</option>
-                <option value="Others">Others</option>
-            </select>
-            <input type="text" id="otherTeamInput" placeholder="Enter Other Team" style="display: none;">
+            <input type="text" id="teamSelect" readonly>
 
             <label for="mobileNumber">Mobile Number:</label>
-            <input type="tel" id="mobileNumber" placeholder="Enter Mobile Number" required>
-
-            <button id="saveDetailsBtn">Save Details</button>
+            <input type="tel" id="mobileNumber" readonly>
         </div>
 
         <div id="submission-section" style="display: none;">

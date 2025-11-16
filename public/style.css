@@ -6,6 +6,79 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    flex-direction: column; /* Allow content to stack vertically */
+}
+
+.admin-login-section {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* Ensure button is above other content */
+}
+
+#admin-auth-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#admin-auth-panel h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#admin-auth-panel input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#admin-auth-panel button {
+    margin-top: 0;
+}
+
+
+#admin-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px; /* Space between admin panel and main container */
+    text-align: center;
+}
+
+#admin-panel h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#admin-panel input[type="file"] {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#admin-panel button {
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+#uploadMessage {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .container {
@@ -43,6 +116,12 @@ select {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
 }
 
 label {
