@@ -1,12 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path'); // Move path require before dotenv config
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, '../public')));
 
 // MongoDB Connection URI
 const mongoURI =process.env.MONGODB_URI;
@@ -91,6 +96,16 @@ app.get('/api/submissions/:employeeId', async (req, res) => {
   }
 });
 
+// Serve static files from the 'public' directory for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
 
-// ✅ Export for Vercel (don’t use app.listen)
+// Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+// Export for Vercel (don’t use app.listen)
 module.exports = app;

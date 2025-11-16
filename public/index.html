@@ -13,6 +13,7 @@
         <div id="employee-id-section">
             <label for="employeeId">Employee ID:</label>
             <input type="text" id="employeeId" placeholder="Enter Employee ID">
+            <button id="enterEmployeeIdBtn">Enter</button>
         </div>
 
         <div id="employee-details-section" style="display: none;">
@@ -37,12 +38,17 @@
             <button id="saveDetailsBtn">Save Details</button>
         </div>
 
-        <div id="submission-section">
+        <div id="submission-section" style="display: none;">
             <p>Today's Date (IST): <span id="currentDate"></span></p>
             <button id="submitDateBtn">Submit Today's Date</button>
             <p><a href="#" id="previousSubmissionsLink" style="display: none;">Previous Submissions: <span id="totalSubmissionsCount">0</span> days</a></p>
             <ul id="submissionDatesList" style="display: none;"></ul>
         </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <div id="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
     </div>
 
     <script src="script.js"></script>
